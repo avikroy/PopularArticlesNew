@@ -1,0 +1,18 @@
+PODS:
+  - Alamofire (4.2.0)
+  - RappleProgressHUD (2.4.1)
+  - SwiftyJSON (4.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.2.0)
+  - RappleProgressHUD
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  RappleProgressHUD: 1d97178abc04ea9e89e4df74227064ded389ce24
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+
+PODFILE CHECKSUM: 92b681ad2a930908cf64baefcc3727ac991c9012
+
+COCOAPODS: 1.4.0
