@@ -21,6 +21,7 @@ class Constants {
     static let LAUNCHING_SEGUE_ID = "viewController"
     static let DETAIL_SEGUE_ID = "detailArticle"
     
+    // get api url
     class func getApiUrl() -> String {
         return APP_URL+API_KEY
     }

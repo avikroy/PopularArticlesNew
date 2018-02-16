@@ -37,7 +37,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
     }
+    
     // request articles
+    
     func getArticles(completion: @escaping (_ result: Bool)->()) {
         Alamofire.request(Constants.getApiUrl()).responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
@@ -98,12 +100,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let destVC : DetailArticleViewController = segue.destination as! DetailArticleViewController
-//        self.navigationController?.pushViewController(destVC, animated: true)
-//
-//    }
+
 }
 
 

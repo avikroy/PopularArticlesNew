@@ -9,7 +9,7 @@
 import UIKit
 
 class Utility: NSObject {
-   
+    // convert JSon array to Article Object aray
     class func getAtricleArrayFromResponseArray(_ arrResponse : [[String:AnyObject]]) -> [Articles]{
         var articleArray = [Articles]()
         for dict in arrResponse{

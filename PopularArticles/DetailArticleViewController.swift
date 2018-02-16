@@ -31,6 +31,7 @@ class DetailArticleViewController: UIViewController {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.activityIndicator)
         
+        // load webview
         if let value = article?.urlString{
             activityIndicator.startAnimating();
             let url = URL(string: value)
@@ -38,8 +39,6 @@ class DetailArticleViewController: UIViewController {
             webView.load(request)
         }
         
-       
-
     }
 
     override func didReceiveMemoryWarning() {
