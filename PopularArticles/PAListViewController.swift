@@ -15,8 +15,7 @@ import RappleProgressHUD
 class PAListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableViewNews: UITableView!
-    var articleArray = [Articles]()
-    
+    var arrRes = [[String :  AnyObject]]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -70,7 +69,6 @@ class PAListViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     // request articles
-    
     func getArticles(completion: @escaping (_ result: Bool)->()) {
         Alamofire.request(Constants.getApiUrl()).responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
@@ -78,11 +76,10 @@ class PAListViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 print("\(swiftyJsonVar)")
                 
                 if let resData = swiftyJsonVar["results"].arrayObject {
-                    let arrRes = resData as! [[String:AnyObject]]
-                    self.articleArray = Utility.getAtricleArrayFromResponseArray(arrRes)
-                    
+                   self.arrRes = resData as! [[String:AnyObject]]
                 }
-                if self.articleArray.count > 0 {
+                
+                if self.arrRes.count > 0 {
                     completion(true)
                 }else{
                     completion(false)
@@ -94,25 +91,20 @@ class PAListViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     // table view data source
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articleArray.count
+        return arrRes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CELL_REUSE_ID, for: indexPath) as! PATableViewCell
         cell.accessoryType = .disclosureIndicator
-        if articleArray.count > 0 {
-            let article = articleArray[(indexPath as NSIndexPath).row]
-            cell.labelNewHeadings.text = article.titleString
-            cell.labelBy.text = article.byString
-            cell.labelDate.text = article.publishedDateString
+        if arrRes.count > 0 {
+            let dict = arrRes[(indexPath as NSIndexPath).row]
+            cell.labelNewHeadings.text = dict["title"] as? String
+            cell.labelBy.text = dict["byline"] as? String
+            cell.labelDate.text = dict["published_date"] as? String
         }
         
         return cell
@@ -122,8 +114,9 @@ class PAListViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.DETAIL_SEGUE_ID) as? PADetailViewController {
-            if articleArray.count > 0{
-                viewController.article = articleArray[(indexPath as NSIndexPath).row]
+            if arrRes.count > 0{
+                let dict = arrRes[(indexPath as NSIndexPath).row]
+                viewController.urlString = dict["url"] as? String
 
             }
             if let navigator = navigationController {

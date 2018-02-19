@@ -15,26 +15,9 @@ class PAListViewControllerTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+   
     func testIfLauncherViewControlleriSNavigationController() {
         
         guard (UIStoryboard(name: "Main", bundle: nil)
@@ -45,6 +28,7 @@ class PAListViewControllerTest: XCTestCase {
         }
     }
     
+    // test if getArticles returns article list 
     func testGetArticles(){
         let promise = expectation(description: "Get Network Request")
         if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.LAUNCHING_SEGUE_ID) as? PAListViewController {
@@ -58,6 +42,45 @@ class PAListViewControllerTest: XCTestCase {
         }else{
             XCTFail("Could not instantiate vc from Main storyboard")
 
+        }
+        
+    }
+    
+    // test table view rows will be shown if response has more than one article
+    func testThatTableViewShownIfValidResponse(){
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.LAUNCHING_SEGUE_ID) as? PAListViewController {
+            
+            let articleDistionary = ["url": "https://www.google.co.in",
+                                     "title": "test title",
+                                     "byline": "Anonymous",
+                                     "published_date": "2018-02-03"] as [String : AnyObject]
+            viewController.arrRes.append(articleDistionary)
+            
+            viewController.loadView()
+            
+            XCTAssertTrue(viewController.tableViewNews.numberOfRows(inSection: 0) > 0 )
+
+            
+        }else{
+            XCTFail("Could not instantiate vc from Main storyboard")
+            
+        }
+        
+    }
+    
+    // test table view rows will not be shown if response no article
+    func testThatNoTableViewRowIfInValidResponse(){
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.LAUNCHING_SEGUE_ID) as? PAListViewController {
+            
+            
+            viewController.loadView()
+            
+            XCTAssertTrue(viewController.tableViewNews.numberOfRows(inSection: 0) == 0 )
+            
+            
+        }else{
+            XCTFail("Could not instantiate vc from Main storyboard")
+            
         }
         
     }

@@ -16,7 +16,6 @@
 		BF55DEAB203591730096FDD0 /* PATableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF55DEA9203591730096FDD0 /* PATableViewCell.swift */; };
 		BF55DEAF203595AB0096FDD0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF55DEAE203595AB0096FDD0 /* Constants.swift */; };
 		BF55DEB12035B5FA0096FDD0 /* PADetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF55DEB02035B5FA0096FDD0 /* PADetailViewController.swift */; };
-		BFC5C5CF203697EB005E090F /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC5C5CE203697EB005E090F /* Articles.swift */; };
 		BFC5C5D62036A030005E090F /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC5C5D52036A030005E090F /* Utility.swift */; };
 		BFC5C5EB2036CB86005E090F /* ViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC5C5EA2036CB86005E090F /* ViewControllerTest.swift */; };
 /* End PBXBuildFile section */
@@ -44,7 +43,6 @@
 		BF55DEA9203591730096FDD0 /* PATableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PATableViewCell.swift; sourceTree = "<group>"; };
 		BF55DEAE203595AB0096FDD0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BF55DEB02035B5FA0096FDD0 /* PADetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PADetailViewController.swift; sourceTree = "<group>"; };
-		BFC5C5CE203697EB005E090F /* Articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
 		BFC5C5D52036A030005E090F /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		BFC5C5E02036C980005E090F /* PopularArticlesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopularArticlesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC5C5E42036C980005E090F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				BFC5C5D220369DD2005E090F /* Utility */,
-				BFC5C5CB2036978E005E090F /* Model */,
 				BF55DEA8203591370096FDD0 /* Table Cell */,
 				BF55DE9620358BEA0096FDD0 /* AppDelegate.swift */,
 				BF55DE9820358BEA0096FDD0 /* PAListViewController.swift */,
@@ -124,14 +121,6 @@
 				BF55DEA9203591730096FDD0 /* PATableViewCell.swift */,
 			);
 			path = "Table Cell";
-			sourceTree = "<group>";
-		};
-		BFC5C5CB2036978E005E090F /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				BFC5C5CE203697EB005E090F /* Articles.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		BFC5C5D220369DD2005E090F /* Utility */ = {
@@ -328,7 +317,6 @@
 				BF55DEAB203591730096FDD0 /* PATableViewCell.swift in Sources */,
 				BF55DE9720358BEA0096FDD0 /* AppDelegate.swift in Sources */,
 				BF55DEB12035B5FA0096FDD0 /* PADetailViewController.swift in Sources */,
-				BFC5C5CF203697EB005E090F /* Articles.swift in Sources */,
 				BF55DEAF203595AB0096FDD0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

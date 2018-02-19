@@ -10,19 +10,8 @@ import UIKit
 import SystemConfiguration
 
 class Utility: NSObject {
-    // convert JSon array to Article Object aray
-    class func getAtricleArrayFromResponseArray(_ arrResponse : [[String:AnyObject]]) -> [Articles]{
-        var articleArray = [Articles]()
-        for dict in arrResponse{
-            let article : Articles? = Articles(dict)
-            if let value = article{
-                articleArray.append(value)
-            }
-        }
-        
-        return articleArray
-    }
     
+    // show alert
     class func showAlert(_ viewcontroller: UIViewController, alertTitle: String, alertMessage: String, completion: @escaping (_ action: Bool)->()){
         let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         let yesAction = UIAlertAction(title: "Continue", style: .default) { (action) -> Void in
@@ -33,11 +22,9 @@ class Utility: NSObject {
             completion(false)
         }
         
-        // Add Actions
         alertController.addAction(yesAction)
         alertController.addAction(noAction)
         
-        // Present Alert Controller
         viewcontroller.present(alertController, animated: true, completion: nil)
     }
     
