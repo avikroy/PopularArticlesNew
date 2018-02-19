@@ -7,9 +7,11 @@
 //
 
 import XCTest
+import WebKit
+
 @testable import PopularArticles
 
-class ViewControllerTest: XCTestCase {
+class PAListViewControllerTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -45,7 +47,7 @@ class ViewControllerTest: XCTestCase {
     
     func testGetArticles(){
         let promise = expectation(description: "Get Network Request")
-        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.LAUNCHING_SEGUE_ID) as? ViewController {
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.LAUNCHING_SEGUE_ID) as? PAListViewController {
             viewController.getArticles(completion: { (result) in
                 XCTAssertTrue(result == true)
                 promise.fulfill()
@@ -59,26 +61,5 @@ class ViewControllerTest: XCTestCase {
         }
         
     }
-    
-//    func testThatTableViewRowSelectionMovesToDetailViewController(){
-//           if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.LAUNCHING_SEGUE_ID) as? ViewController {
-//            let articleDistionary = ["url": "testurl",
-//                                     "title": "test title",
-//                                     "byline": "Anonymous",
-//                                     "published_date": "2018-02-03"] as [String : String]
-//            let art = Articles(articleDistionary as [String : AnyObject])
-//            viewController.articleArray.append(art)
-//            viewController.loadView()
-//            viewController.tableViewNews.reloadData()
-//            viewController.tableView(viewController.tableViewNews, didSelectRowAt: NSIndexPath(row: 0, section: 0) as IndexPath);
-//            XCTAssertTrue((viewController.navigationController?.topViewController?.isKind(of: DetailArticleViewController.self))!)
-//
-//            
-//        }else{
-//            XCTFail("Could not instantiate vc from Main storyboard")
-//            
-//        }
-//    
-//    }
-    
+        
 }

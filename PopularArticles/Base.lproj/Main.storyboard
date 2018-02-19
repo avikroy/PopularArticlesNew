@@ -10,23 +10,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="viewController" id="BYZ-38-t0r" customClass="ViewController" customModule="PopularArticles" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="viewController" id="BYZ-38-t0r" customClass="PAListViewController" customModule="PopularArticles" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lOl-zz-SbV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lOl-zz-SbV">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableCellId" id="Hlt-g4-kEz" customClass="PATableViewCell" customModule="PopularArticles" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="120"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hlt-g4-kEz" id="2Mz-1I-Enh">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQE-YV-qiG">
@@ -38,17 +38,17 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMx-nz-8iU">
-                                                    <rect key="frame" x="8" y="62" width="359" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMx-nz-8iU">
+                                                    <rect key="frame" x="8" y="62" width="359" height="45"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="Db2-Nc-mKl"/>
+                                                        <constraint firstAttribute="height" constant="45" id="Db2-Nc-mKl"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.56470588239999997" green="0.56470588239999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ha5-n0-6X7">
-                                                    <rect key="frame" x="230" y="89" width="137" height="21"/>
+                                                    <rect key="frame" x="230" y="117" width="137" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="137" id="HuO-CS-gfY"/>
                                                     </constraints>
@@ -60,10 +60,11 @@
                                             <constraints>
                                                 <constraint firstItem="OMx-nz-8iU" firstAttribute="trailing" secondItem="2Mz-1I-Enh" secondAttribute="trailingMargin" id="0uN-TL-g32"/>
                                                 <constraint firstItem="SQE-YV-qiG" firstAttribute="trailing" secondItem="2Mz-1I-Enh" secondAttribute="trailingMargin" id="2md-zz-zcr"/>
+                                                <constraint firstItem="Ha5-n0-6X7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2Mz-1I-Enh" secondAttribute="leadingMargin" id="7Og-fk-8w7"/>
                                                 <constraint firstItem="OMx-nz-8iU" firstAttribute="top" secondItem="SQE-YV-qiG" secondAttribute="bottom" constant="6" id="7no-Iy-zwF"/>
-                                                <constraint firstItem="Ha5-n0-6X7" firstAttribute="top" secondItem="OMx-nz-8iU" secondAttribute="bottom" constant="6" id="GLW-JY-aUz"/>
+                                                <constraint firstItem="Ha5-n0-6X7" firstAttribute="top" secondItem="OMx-nz-8iU" secondAttribute="bottom" constant="10" id="GLW-JY-aUz"/>
                                                 <constraint firstItem="SQE-YV-qiG" firstAttribute="top" secondItem="2Mz-1I-Enh" secondAttribute="topMargin" id="QFo-P7-mdp"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Ha5-n0-6X7" secondAttribute="bottom" constant="1.5" id="XvD-B2-6Mr"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Ha5-n0-6X7" secondAttribute="bottom" constant="9.5" id="XvD-B2-6Mr"/>
                                                 <constraint firstItem="Ha5-n0-6X7" firstAttribute="trailing" secondItem="2Mz-1I-Enh" secondAttribute="trailingMargin" id="f0e-bo-yHQ"/>
                                                 <constraint firstItem="OMx-nz-8iU" firstAttribute="leading" secondItem="2Mz-1I-Enh" secondAttribute="leadingMargin" id="hpA-JZ-Bss"/>
                                                 <constraint firstItem="SQE-YV-qiG" firstAttribute="leading" secondItem="2Mz-1I-Enh" secondAttribute="leadingMargin" id="k26-2a-JyL"/>
@@ -101,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="455.19999999999999" y="117.39130434782609"/>
         </scene>
-        <!--Detail Article View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="Zar-sP-F3J">
             <objects>
-                <viewController storyboardIdentifier="detailArticle" id="Zal-tG-D27" customClass="DetailArticleViewController" customModule="PopularArticles" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailArticle" id="Zal-tG-D27" customClass="PADetailViewController" customModule="PopularArticles" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IHl-NJ-Mnn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

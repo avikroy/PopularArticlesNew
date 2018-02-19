@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		48136D0BB6D44275E074ECA3 /* Pods_PopularArticles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE09508CA6B24321AE766C08 /* Pods_PopularArticles.framework */; };
 		BF55DE9720358BEA0096FDD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF55DE9620358BEA0096FDD0 /* AppDelegate.swift */; };
-		BF55DE9920358BEA0096FDD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF55DE9820358BEA0096FDD0 /* ViewController.swift */; };
+		BF55DE9920358BEA0096FDD0 /* PAListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF55DE9820358BEA0096FDD0 /* PAListViewController.swift */; };
 		BF55DE9C20358BEA0096FDD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF55DE9A20358BEA0096FDD0 /* Main.storyboard */; };
 		BF55DE9E20358BEA0096FDD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF55DE9D20358BEA0096FDD0 /* Assets.xcassets */; };
 		BF55DEA120358BEA0096FDD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF55DE9F20358BEA0096FDD0 /* LaunchScreen.storyboard */; };
 		BF55DEAB203591730096FDD0 /* PATableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF55DEA9203591730096FDD0 /* PATableViewCell.swift */; };
 		BF55DEAF203595AB0096FDD0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF55DEAE203595AB0096FDD0 /* Constants.swift */; };
-		BF55DEB12035B5FA0096FDD0 /* DetailArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF55DEB02035B5FA0096FDD0 /* DetailArticleViewController.swift */; };
+		BF55DEB12035B5FA0096FDD0 /* PADetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF55DEB02035B5FA0096FDD0 /* PADetailViewController.swift */; };
 		BFC5C5CF203697EB005E090F /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC5C5CE203697EB005E090F /* Articles.swift */; };
 		BFC5C5D62036A030005E090F /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC5C5D52036A030005E090F /* Utility.swift */; };
 		BFC5C5EB2036CB86005E090F /* ViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC5C5EA2036CB86005E090F /* ViewControllerTest.swift */; };
@@ -36,14 +36,14 @@
 		99790F44C5E0797F7D71BAC3 /* Pods-PopularArticles.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopularArticles.release.xcconfig"; path = "Pods/Target Support Files/Pods-PopularArticles/Pods-PopularArticles.release.xcconfig"; sourceTree = "<group>"; };
 		BF55DE9320358BEA0096FDD0 /* PopularArticles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopularArticles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF55DE9620358BEA0096FDD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BF55DE9820358BEA0096FDD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BF55DE9820358BEA0096FDD0 /* PAListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAListViewController.swift; sourceTree = "<group>"; };
 		BF55DE9B20358BEA0096FDD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF55DE9D20358BEA0096FDD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF55DEA020358BEA0096FDD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF55DEA220358BEA0096FDD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF55DEA9203591730096FDD0 /* PATableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PATableViewCell.swift; sourceTree = "<group>"; };
 		BF55DEAE203595AB0096FDD0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		BF55DEB02035B5FA0096FDD0 /* DetailArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailArticleViewController.swift; sourceTree = "<group>"; };
+		BF55DEB02035B5FA0096FDD0 /* PADetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PADetailViewController.swift; sourceTree = "<group>"; };
 		BFC5C5CE203697EB005E090F /* Articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
 		BFC5C5D52036A030005E090F /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		BFC5C5E02036C980005E090F /* PopularArticlesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopularArticlesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,13 +107,13 @@
 				BFC5C5CB2036978E005E090F /* Model */,
 				BF55DEA8203591370096FDD0 /* Table Cell */,
 				BF55DE9620358BEA0096FDD0 /* AppDelegate.swift */,
-				BF55DE9820358BEA0096FDD0 /* ViewController.swift */,
+				BF55DE9820358BEA0096FDD0 /* PAListViewController.swift */,
 				BF55DE9A20358BEA0096FDD0 /* Main.storyboard */,
 				BF55DE9D20358BEA0096FDD0 /* Assets.xcassets */,
 				BF55DE9F20358BEA0096FDD0 /* LaunchScreen.storyboard */,
 				BF55DEA220358BEA0096FDD0 /* Info.plist */,
 				BF55DEAE203595AB0096FDD0 /* Constants.swift */,
-				BF55DEB02035B5FA0096FDD0 /* DetailArticleViewController.swift */,
+				BF55DEB02035B5FA0096FDD0 /* PADetailViewController.swift */,
 			);
 			path = PopularArticles;
 			sourceTree = "<group>";
@@ -324,10 +324,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFC5C5D62036A030005E090F /* Utility.swift in Sources */,
-				BF55DE9920358BEA0096FDD0 /* ViewController.swift in Sources */,
+				BF55DE9920358BEA0096FDD0 /* PAListViewController.swift in Sources */,
 				BF55DEAB203591730096FDD0 /* PATableViewCell.swift in Sources */,
 				BF55DE9720358BEA0096FDD0 /* AppDelegate.swift in Sources */,
-				BF55DEB12035B5FA0096FDD0 /* DetailArticleViewController.swift in Sources */,
+				BF55DEB12035B5FA0096FDD0 /* PADetailViewController.swift in Sources */,
 				BFC5C5CF203697EB005E090F /* Articles.swift in Sources */,
 				BF55DEAF203595AB0096FDD0 /* Constants.swift in Sources */,
 			);

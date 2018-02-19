@@ -1,15 +1,16 @@
 //
-//  DetailArticleViewController.swift
+//  PADetailViewController.swift
 //  PopularArticles
 //
 //  Created by DEP on 15/02/18.
 //  Copyright © 2018 DEP. All rights reserved.
+//  This class is used show details of the selected article
 //
 
 import UIKit
 import WebKit
 
-class DetailArticleViewController: UIViewController, WKNavigationDelegate {
+class PADetailViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var controlToolBar: UIToolbar!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -35,14 +36,19 @@ class DetailArticleViewController: UIViewController, WKNavigationDelegate {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.activityIndicator)
         
-        // load webview
+        setupWebVeiw()
+        
+    }
+    
+    // load webview
+    func setupWebVeiw(){
+        
         if let value = article?.urlString{
             showWebLoading()
             let url = URL(string: value)
             let request = URLRequest(url: url!)
             webView.load(request)
         }
-        
     }
     
     func showWebLoading(){

@@ -1,9 +1,10 @@
 //
-//  ViewController.swift
+//  PAListViewController.swift
 //  PopularArticles
 //
 //  Created by DEP on 15/02/18.
 //  Copyright © 2018 DEP. All rights reserved.
+//  This class is used to list all articles
 //
 
 import UIKit
@@ -11,7 +12,7 @@ import Alamofire
 import SwiftyJSON
 import RappleProgressHUD
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PAListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableViewNews: UITableView!
     var articleArray = [Articles]()
@@ -120,7 +121,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //table view delegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.DETAIL_SEGUE_ID) as? DetailArticleViewController {
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.DETAIL_SEGUE_ID) as? PADetailViewController {
             if articleArray.count > 0{
                 viewController.article = articleArray[(indexPath as NSIndexPath).row]
 
