@@ -24,6 +24,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableViewNews.separatorStyle = .none
         tableViewNews.isHidden = true
         
+        self.navigationController?.navigationBar.isTranslucent  =  false
         
         if Utility.isInternetAvailable(){
             RappleActivityIndicatorView.startAnimatingWithLabel("Please Wait...", attributes: RappleAppleAttributes)
