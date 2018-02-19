@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class DetailArticleViewController: UIViewController {
+class DetailArticleViewController: UIViewController, WKNavigationDelegate {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var webView: WKWebView
@@ -22,6 +22,7 @@ class DetailArticleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        webView.navigationDelegate = self
         view.addSubview(webView)
         
         webView.translatesAutoresizingMaskIntoConstraints = false
@@ -46,6 +47,20 @@ class DetailArticleViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // wkwebview navigation delegate
+    
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating();
+
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
+
+    }
+
     
     
 

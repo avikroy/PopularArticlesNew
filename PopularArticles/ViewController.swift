@@ -24,18 +24,47 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableViewNews.separatorStyle = .none
         tableViewNews.isHidden = true
         
-        RappleActivityIndicatorView.startAnimatingWithLabel("Please Wait...", attributes: RappleAppleAttributes)
+        
+        if Utility.isInternetAvailable(){
+            RappleActivityIndicatorView.startAnimatingWithLabel("Please Wait...", attributes: RappleAppleAttributes)
 
-        getArticles { (result) in
-            if result {
-                self.tableViewNews.isHidden = false
-                self.tableViewNews.separatorStyle = .singleLine
-                self.tableViewNews.reloadData()
-                RappleActivityIndicatorView.stopAnimation()
-
+            getArticles { (result) in
+                if result {
+                    self.tableViewNews.isHidden = false
+                    self.tableViewNews.separatorStyle = .singleLine
+                    self.tableViewNews.reloadData()
+                    RappleActivityIndicatorView.stopAnimation()
+                    
+                }
             }
+        }else{
+            // if no network - ask user to rechek network connection and retry
+            resetAndRetry()
         }
         
+        
+    }
+    
+    // reset connection and retry
+    func resetAndRetry(){
+        Utility.showAlert(self, alertTitle: "No Network", alertMessage: "Please cehck you network connection and try again", completion: { (action) in
+            if action {
+                if Utility.isInternetAvailable(){
+                    RappleActivityIndicatorView.startAnimatingWithLabel("Please Wait...", attributes: RappleAppleAttributes)
+                    self.getArticles { (result) in
+                        if result {
+                            self.tableViewNews.isHidden = false
+                            self.tableViewNews.separatorStyle = .singleLine
+                            self.tableViewNews.reloadData()
+                            RappleActivityIndicatorView.stopAnimation()
+                            
+                        }
+                    }
+                }else{
+                   self.resetAndRetry()
+                }
+            }
+        })
     }
     
     // request articles
